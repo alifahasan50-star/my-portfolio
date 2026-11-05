@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alif Hosen — Personal Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#0a0b1c;--ink:#f2f1ff;--muted:#a3a2c6;--glass:rgba(255,255,255,.06);--line:rgba(255,255,255,.14);--a:#6d6bff;--b:#14c8b0;--c:#f5b942}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f5f6ff;--ink:#17183a;--muted:#5c5e86;--glass:rgba(255,255,255,.72);--line:rgba(50,50,140,.15)}}
+:root[data-theme="light"]{--bg:#f5f6ff;--ink:#17183a;--muted:#5c5e86;--glass:rgba(255,255,255,.72);--line:rgba(50,50,140,.15)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Sora',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+.aurora{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.aurora i{position:absolute;width:55vmax;height:55vmax;border-radius:50%;filter:blur(90px);opacity:.42;animation:float 18s ease-in-out infinite alternate}
+.aurora i:nth-child(1){background:var(--a);top:-20%;left:-15%}
+.aurora i:nth-child(2){background:var(--b);bottom:-25%;right:-15%;animation-delay:-6s}
+.aurora i:nth-child(3){background:var(--c);top:35%;left:40%;width:30vmax;height:30vmax;opacity:.2;animation-delay:-12s}
+@keyframes float{to{transform:translate(8vw,6vh) scale(1.2) rotate(40deg)}}
+#glow{position:fixed;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,rgba(109,107,255,.3),transparent 65%);left:50%;top:30%;transition:left .15s,top .15s}
+main{max-width:860px;margin:0 auto;padding:0 22px 60px}
+a:focus-visible{outline:3px solid var(--c);outline-offset:3px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:6px;margin:14px auto 0;width:max-content;max-width:100%;overflow-x:auto;padding:6px;border-radius:999px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+nav a{padding:8px 15px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:.9rem;white-space:nowrap;transition:.25s}
+nav a:hover{background:linear-gradient(90deg,var(--a),var(--b));color:#fff}
+.hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;padding:40px 0}
+.hgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--line);font-size:.85rem;margin-bottom:18px}
+.badge i{width:9px;height:9px;border-radius:50%;background:#22e07a;animation:ping 1.8s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(34,224,122,.7)}100%{box-shadow:0 0 0 10px rgba(34,224,122,0)}}
+.hi{color:var(--muted);font-size:1.1rem;margin:0 0 6px}
+h1{font-size:clamp(3rem,12vw,5.6rem);font-weight:800;line-height:1;margin:0 0 20px;letter-spacing:-.03em;background:linear-gradient(100deg,var(--a),var(--b),var(--c),var(--a));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.type{font-size:clamp(1.15rem,4.2vw,1.6rem);font-weight:600;min-height:2.2em}
+.type b{border-right:3px solid var(--b);padding-right:4px;animation:blink .8s steps(1) infinite}
+@keyframes blink{50%{border-color:transparent}}
+.sub{color:var(--muted);max-width:32em;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:600;border:1px solid var(--line);background:var(--glass);color:var(--ink);transition:.3s}
+.btn.fill{border:0;color:#fff;background:linear-gradient(90deg,var(--a),var(--b));box-shadow:0 10px 30px rgba(109,107,255,.4)}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+.photo{position:relative;width:min(100%,330px);aspect-ratio:1;justify-self:center}
+.photo::before{content:"";position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(var(--a),var(--b),var(--c),var(--a));animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;border:6px solid var(--bg)}
+.chip{position:absolute;padding:8px 14px;border-radius:14px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:.8rem;font-weight:600;z-index:2;animation:bob 4s ease-in-out infinite alternate}
+.c1{top:6%;left:-6%}.c2{bottom:8%;right:-4%;animation-delay:-2s}
+@keyframes bob{to{transform:translateY(-10px)}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:44px}
+.stat{text-align:center;padding:18px 8px;border-radius:20px;background:var(--glass);border:1px solid var(--line)}
+.stat b{display:block;font-size:2rem;font-weight:800}.stat span{color:var(--muted);font-size:.85rem}
+section{padding:46px 0}
+h2{font-size:2rem;font-weight:800;margin:0 0 22px;letter-spacing:-.02em}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s,transform .8s}.reveal.on{opacity:1;transform:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{padding:22px;border-radius:22px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .2s,border-color .3s}
+.card:hover{border-color:var(--b)}
+.card h3{margin:0 0 4px;font-size:1.1rem}.card p,.card li{color:var(--muted);margin:0}
+.card ul{margin:10px 0 0;padding-left:18px;display:grid;gap:4px;font-size:.95rem}
+.co{color:var(--ink);font-size:.92rem;margin-bottom:2px!important}
+.tl{position:relative;display:grid;gap:18px;padding-left:28px}
+.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:3px;border-radius:3px;background:linear-gradient(var(--a),var(--b),var(--c))}
+.tl .card{position:relative}
+.tl .card::before{content:"";position:absolute;left:-29px;top:26px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--b)}
+.when{color:var(--c);font-weight:600;font-size:.85rem}
+.award{display:flex;gap:14px;align-items:center;margin-top:18px;padding:18px 22px;border-radius:22px;border:1px solid var(--c);background:var(--glass)}
+.award span{font-size:2rem}.award p{margin:0}
+.marq{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.track{display:flex;gap:12px;width:max-content;animation:scroll 26s linear infinite}
+.marq:hover .track{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.track span{padding:12px 24px;border-radius:999px;background:var(--glass);border:1px solid var(--line);font-weight:600;white-space:nowrap}
+.langs{margin-top:22px}.bar{margin:10px 0}.bar div{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:5px}
+.bar i{display:block;height:8px;border-radius:8px;background:var(--line);overflow:hidden}
+.bar i::after{content:"";display:block;height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--a),var(--b));transition:width 1.4s ease}
+.on .bar i::after{width:var(--w)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}.tags span{padding:8px 16px;border-radius:999px;background:var(--glass);border:1px solid var(--line);font-size:.92rem}
+.goals{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.goals li{padding:18px 20px 18px 56px;position:relative;border-radius:20px;background:var(--glass);border:1px solid var(--line)}
+.goals li::before{content:"";position:absolute;left:20px;top:22px;width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,var(--a),var(--b));animation:pulse 2.2s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(20,200,176,.6)}100%{box-shadow:0 0 0 16px rgba(20,200,176,0)}}
+.contact{text-align:center;padding:40px 22px;border-radius:28px;background:var(--glass);border:1px solid var(--line)}
+.contact .btns{justify-content:center}
+footer{text-align:center;color:var(--muted);margin-top:30px;font-size:.9rem}
+@media (max-width:680px){.hgrid{grid-template-columns:1fr}.photo{order:-1;width:min(68%,250px)}.c1{left:-2%}.c2{right:-2%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.bar i::after{width:var(--w)}}
+</style></head>
+<body>
+<div class="aurora"><i></i><i></i><i></i></div><div id="glow"></div>
+<nav><a href="#top">Home</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#learning">Learning</a><a href="#next">What’s next</a><a href="#contact">Contact</a></nav>
+<main id="top">
+<header class="hero"><div class="hgrid"><div>
+  <span class="badge"><i></i>Based in Domar, Nilphamari</span>
+  <p class="hi">Hello, I’m</p>
+  <h1>Alif Hosen</h1>
+  <div class="type"><b id="t"></b></div>
+  <p class="sub">Owner of Bismillah Pharmacy in Domar, Nilphamari. With experience in inventory, customer service and hospitality, I keep things organised and people well served.</p>
+  <div class="btns"><a class="btn fill" href="#contact">Contact me</a><a class="btn" href="#experience">My experience</a></div>
+</div>
+<div class="photo"><img src="data:image/jpeg;base64,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" alt="Alif Hosen"><span class="chip c1">💊 Bismillah Pharmacy</span><span class="chip c2">🤝 Customer care</span></div></div>
+<div class="stats">
+  <div class="stat"><b data-n="4">0</b><span>Years of experience</span></div>
+  <div class="stat"><b data-n="3">0</b><span>Certifications</span></div>
+  <div class="stat"><b data-n="4">0</b><span>Languages</span></div>
+</div></header>
+
+<section id="experience" class="reveal"><h2>Experience</h2>
+<div class="tl">
+ <div class="card"><div class="when">Present</div><h3>Owner</h3><p class="co">Bismillah Pharmacy, Jhoradighi Bazaar, Chilahati Road, Domar, Nilphamari</p>
+  <ul><li>Run my own pharmacy business and serve customers every day.</li><li>Manage stock, purchasing and daily operations.</li><li>Build trust with the local community.</li></ul></div>
+ <div class="card"><div class="when">1 year 10 months</div><h3>Assistant Storekeeper</h3><p class="co">Al Foah Dates Emirates Company</p>
+  <ul><li>Manage stock records and inventory control.</li><li>Receive, store and issue goods accurately.</li><li>Keep the storage area clean, safe and organised.</li></ul></div>
+ <div class="card"><div class="when">Temporary · 2 months 15 days</div><h3>Event Assistant</h3><p class="co">Prisme International, UAE</p>
+  <ul><li>Supported corporate and social events from planning to execution.</li><li>Set up equipment and decorations, guided guests and handled inquiries.</li><li>Handled last-minute changes and post-event cleanup.</li></ul></div>
+ <div class="card"><div class="when">May 2023 – June 2024</div><h3>Senior Housekeeping Attendant, Luxury Division</h3><p class="co">BYSL Global Technology Group (Elite Hotel Management)</p>
+  <ul><li>Kept guest rooms and public areas to luxury hygiene standards.</li><li>Received consistent positive guest feedback.</li><li>Helped train new staff.</li></ul></div>
+ <div class="card"><div class="when">February 2022 – April 2023</div><h3>Field Officer</h3><p class="co">Jamuna Electric and Automobile Limited</p>
+  <ul><li>Visited sites to check service quality.</li><li>Built customer relationships and answered service questions.</li><li>Helped improve processes and customer satisfaction.</li></ul></div>
+</div>
+<div class="award"><span>🏆</span><p><b>Employee of the Month, June 2023.</b> Awarded at BYSL Global Technology Group for outstanding cleanliness and guest satisfaction.</p></div>
+</section>
+
+<section id="skills" class="reveal"><h2>Skills</h2>
+<div class="marq"><div class="track" id="tr"></div></div>
+<div class="langs card" style="margin-top:22px"><h3>Languages</h3>
+ <div class="bar"><div><span>Bengali</span><span>Native</span></div><i style="--w:100%"></i></div>
+ <div class="bar"><div><span>English</span><span>Fluent</span></div><i style="--w:90%"></i></div>
+ <div class="bar"><div><span>Hindi</span><span>Fluent speaking</span></div><i style="--w:80%"></i></div>
+ <div class="bar"><div><span>Korean</span><span>Intermediate</span></div><i style="--w:55%"></i></div></div>
+</section>
+
+<section id="learning" class="reveal"><h2>Training and education</h2>
+<div class="grid">
+ <div class="card"><div class="when">2020 · Grade A</div><h3>Basic Computer Skills</h3><p>Nilphamari District Training Center, 3 months</p></div>
+ <div class="card"><div class="when">2023 · Grade A+</div><h3>Korean Language</h3><p>Bijoy Korean Language &amp; Training Institute</p></div>
+ <div class="card"><div class="when">2022 – 2023</div><h3>Aluminum Formwork</h3><p>H.T.I Singapore Training Center</p></div>
+ <div class="card"><div class="when">Near completion</div><h3>BA (Honors) in History</h3><p>Nilphamari Govt. College, National University</p></div>
+ <div class="card"><div class="when">2021 · GPA 4.50</div><h3>Higher Secondary (HSC)</h3><p>Mirjaganj College, Humanities</p></div>
+ <div class="card"><div class="when">2019 · GPA 4.28</div><h3>Secondary (SSC)</h3><p>Halhalia Adarsha Bidda Niketon, Science</p></div>
+</div>
+<div class="tags"><span>🌱 Gardening</span><span>🍳 Cooking</span><span>✈️ Traveling</span><span>💻 Technology</span></div>
+</section>
+
+<section id="next" class="reveal"><h2>What’s next</h2>
+<ul class="goals"><li>Grow Bismillah Pharmacy and serve more people.</li><li>Open a computer and IT electronics devices business, inshallah.</li><li>Build trusted businesses for my community.</li></ul></section>
+
+<section id="contact" class="reveal"><div class="contact"><h2>Let’s talk</h2>
+<p style="color:var(--muted);margin-top:0">Call, message or visit the pharmacy. Always happy to talk.</p>
+<p style="margin:0 0 22px">📍 <b>Bismillah Pharmacy</b><br><span style="color:var(--muted)">Jhoradighi Bazaar, Chilahati Road, Domar, Nilphamari</span></p>
+<div class="btns"><a class="btn fill" href="tel:+8801738221459">Call 01738221459</a><a class="btn" href="https://wa.me/8801738221459">WhatsApp</a><a class="btn" href="mailto:alifahasan50@gmail.com">Email me</a><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Jhoradighi+Bazaar+Chilahati+Road+Domar+Nilphamari">Get directions</a></div></div>
+<footer>© 2026 Alif Hosen · Domar, Nilphamari</footer></section>
+</main>
+<script>
+const roles=["Owner of Bismillah Pharmacy","Inventory & customer service pro","Future computer & IT electronics business"];
+let r=0,c=0,del=false;const t=document.getElementById('t');
+(function tick(){const w=roles[r];t.textContent=w.slice(0,c);
+ if(!del&&c===w.length){del=true;return setTimeout(tick,1500)}
+ if(del&&c===0){del=false;r=(r+1)%roles.length}
+ c+=del?-1:1;setTimeout(tick,del?35:70)})();
+const sk=["Pharmacy business","Inventory management","Stock control","Customer service","Event support","Housekeeping standards","Team coordination","MS Office","Time management","Problem solving"];
+document.getElementById('tr').innerHTML=[...sk,...sk].map(s=>'<span>'+s+'</span>').join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('[data-n]').forEach(el=>{const n=+el.dataset.n;let i=0;const s=setInterval(()=>{i++;el.textContent=i+'+';if(i>=n)clearInterval(s)},900/n)});
+const g=document.getElementById('glow');
+addEventListener('pointermove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+</script></body></html>
